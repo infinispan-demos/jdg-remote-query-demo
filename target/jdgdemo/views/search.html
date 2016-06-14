@@ -1,0 +1,51 @@
+<form class="form-horizontal" role="form" ng-submit="searchTasks()">
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Filter tasks</label>
+
+        <div class="col-sm-10">
+            <input autofocus="autofocus" type="text" class="form-control" id="title" placeholder="words to find..." ng-model="keyword">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+         <td>
+         <button type="submit" class="btn btn-default">Search</button>
+        </td>        
+         <a class="btn btn-default" href="#/"><i
+        class="btn btn-default"></i> Back</a> 
+        </td>
+        </div>
+    </div>
+    
+    
+    
+    <table class="table table-hover">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Created On
+        </th>
+        <th>
+            Completed On
+        </th>
+        <th>Done</th>
+    </tr>
+    <tr class="success-{{task.done}}" ng-repeat="task in tasks track by $index">
+        <td> 
+            {{task.title}}
+        </td>
+        <td>
+            {{task.createdOn |date:'medium'}}
+        </td>
+        <td>
+            {{task.completedOn |date:'medium'}}
+        </td>
+        <td>
+            <input type="checkbox" ng-change="taskStatusChanged(task)" ng-value="task.done" ng-model="task.done">
+        </td>
+    </tr>
+</table>
+        
+</form>

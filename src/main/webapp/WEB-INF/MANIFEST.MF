@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Dependencies: org.infinispan.commons:jdg-6.5 services, org.infinispan.client.hotrod:jdg-6.5 services, org.infinispan.query.dsl:jdg-6.5 services, org.jboss.remoting3

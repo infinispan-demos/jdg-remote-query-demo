@@ -1,0 +1,12 @@
+/* @Indexed */
+message Task {
+
+   /* @IndexedField */
+   required string title = 1;
+
+   /* @IndexedField(index=false, store=false) */
+   required int32 id = 2;
+
+   }
+
+}
