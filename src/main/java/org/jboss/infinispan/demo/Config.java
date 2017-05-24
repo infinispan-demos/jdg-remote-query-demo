@@ -44,12 +44,12 @@ public class Config {
 	@Produces
 	public RemoteCache<Long, Task> getRemoteCache() throws Exception {
 		ConfigurationBuilder builder = new ConfigurationBuilder();
-		builder.addServers("localhost:11222")
+		builder.addServers("localhost:11223")
 		       .marshaller(new ProtoStreamMarshaller());  // The Protobuf based marshaller is required for query capabilities
 		cacheManager= new RemoteCacheManager(builder.build(), true);
 		registerSchemasAndMarshallers();
 		
-		return cacheManager.getCache("demoSergio");
+		return cacheManager.getCache("tasks");
 		
 	}
 	
