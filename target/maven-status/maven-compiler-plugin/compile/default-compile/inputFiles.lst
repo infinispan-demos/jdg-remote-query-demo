@@ -1,9 +1,0 @@
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/rest/LoadTasksEndpoint.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/marshallers/TaskMarshaller.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/rest/RestApplication.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/rest/TaskEndpoint.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/rest/SearchEndpoint.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/TaskService.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/rest/RemoveAllTasks.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/Config.java
-/home/sgutierr/workspace/jdg7/DataGridDemo/src/main/java/org/jboss/infinispan/demo/model/Task.java
