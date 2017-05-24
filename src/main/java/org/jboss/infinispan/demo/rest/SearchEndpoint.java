@@ -54,8 +54,11 @@ public class SearchEndpoint
 	   QueryFactory qf = Search.getQueryFactory(cache);
 	   long startTime = System.currentTimeMillis();
 	   Query query = qf.from(Task.class)
-	           .having("title").eq(keyword).toBuilder()
-	            .build();
+	           .having("title")
+               //.eq(keyword)
+               .like("%" + keyword + "%")
+                 .toBuilder()
+	                 .build();
 	      List<Task> results = query.list();	   
 	    long stopTime = System.currentTimeMillis();	    
 	    log.info("#### Executeing last query took " + (stopTime-startTime) + " ms"); 
