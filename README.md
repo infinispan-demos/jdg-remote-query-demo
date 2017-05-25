@@ -3,6 +3,10 @@
 This is a demo showing the remote query capability in JBoss Data Grid. To tun this demo, you will need to download
 [JBoss Data Grid](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=data.grid&downloadType=distributions) and [JBoss EAP](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&downloadType=distributions). This demo has been tested with JBoss Data Grid 7.1 and JBoss EAP 7.0.
 
+##Screenshot
+
+![Alt text](/docs/screenshot.png?raw=true "Demo Screenshot")
+
 ## Instructions
 
 * Create a directory called ```demo``` somewhere convenient on your file system.
@@ -75,8 +79,6 @@ jboss-datagrid-7.1.0-server/bin/standalone.sh -c clustered.xml -b 127.0.0.1 -bma
 jboss-eap-7.0/bin/standalone.sh -b 127.0.0.1 -bmanagement=127.0.0.1
 ```
 
-* Change into the ```jdg7_demo``` and build the application with ```mvn clean package```
-
-* Deploy the application using ```mvn wildfly:deploy```
+* Change into the ```jdg7_demo``` and build and deploy the application with ```mvn clean package wildfly:deploy```
 
 * Run the demo in a browser at ```http://localhost:8080/jdgdemo```
