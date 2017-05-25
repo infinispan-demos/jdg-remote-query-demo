@@ -35,7 +35,7 @@ public class TaskEndpoint
    public Response create(Task task)
    {
       taskService.insert(task);
-      System.out.println("Creada Task id="+task.getId());
+      log.info("Create Task id="+task.getId());
       return Response.created(UriBuilder.fromResource(TaskEndpoint.class).path(String.valueOf(task.getId())).build()).build();
    }
 
@@ -47,7 +47,7 @@ public class TaskEndpoint
 	    long startTime = System.currentTimeMillis();
 	    Collection<Task> ct=taskService.findAll();
 	    long stopTime = System.currentTimeMillis();
-	    log.info("#### Executeing all reads took " + (stopTime-startTime) + " ms");
+	    log.info("#### Executing all reads took " + (stopTime-startTime) + " ms");
 	   return ct; 
    }
 

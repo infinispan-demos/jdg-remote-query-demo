@@ -64,6 +64,4 @@ public class SearchEndpoint
 	    log.info("#### Executing last query took " + (stopTime-startTime) + " ms"); 
 	  return results; 
    }
-
-
 }
