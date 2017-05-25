@@ -59,7 +59,7 @@ public class TaskService {
 		}
 	
 		task.setId(System.nanoTime());
-		cache.putIfAbsent(task.getId(), task);
+		cache.put(task.getId(), task);
 	}
 
 	/**

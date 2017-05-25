@@ -13,6 +13,7 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.arquillian_core>1.1.5.Final</version.arquillian_core>
+		<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -101,11 +102,15 @@
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-query-dsl</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-remote-query-client</artifactId>
         </dependency>
+		<dependency>
+			<groupId>org.wildfly.plugins</groupId>
+			<artifactId>wildfly-maven-plugin</artifactId>
+			<version>${version.wildfly.maven.plugin}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>jdgdemo</finalName>
@@ -118,16 +123,53 @@
 				</configuration>
 			</plugin>
 			<plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.1.0.Final</version>
+                <configuration>
+                    <hostname>localhost</hostname>
+                    <port>9990</port>
+                    <username>admin</username>
+                    <password>password</password>
+                    <jboss-home>../jboss-eap-7.0</jboss-home>
+                    <name>${project.build.finalName}.${project.packaging}</name>
+                </configuration>
+                <executions>
+                    <!-- Undeploy the application on clean -->
+                    <execution>
+                        <id>undeploy</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>undeploy</goal>
+                        </goals>
+                        <configuration>
+                            <ignoreMissingDeployment>true</ignoreMissingDeployment>
+                        </configuration>
+                    </execution>
+
+                    <!-- Deploy the application on install -->
+                    <execution>
+                        <id>deploy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+			<!--
+			<plugin>
 				<groupId>org.jboss.as.plugins</groupId>
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>7.5.Final</version>
 				<configuration>
 					<hostname>localhost</hostname>
-					<port>9999</port>
+					<port>9990</port>
 					<username>admin</username>
-					<password>admin-123</password>
+					<password>admin</password>
 				</configuration>
 			</plugin>
+			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>

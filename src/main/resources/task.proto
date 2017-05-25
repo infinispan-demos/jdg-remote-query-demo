@@ -7,11 +7,9 @@ message Task {
    /* @IndexedField(index=true, store=false) */
    required int64 id = 2;
    
-   optional fixed64 createdOn = 3;
-   
-   optional fixed64 completedOn = 4;
-      
+   optional fixed64 completedOn = 3;
+
+   optional fixed64 createdOn = 4;
+
    optional bool done = 5;   
-
 }
-

@@ -17,10 +17,6 @@ This is a demo showing the remote query capability in JBoss Data Grid. To tun th
 
 * Clone this repository in the demo directory so you have the folder ```demo/jdg7_demo```
 
-* Change into the ```jdg7_demo``` and build the application with ```mvn clean package```
-
-* Copy the war file into the EAP standalone/delpoyments directory ```cp target/jdg7demo.war ../jboss-eap-7.0/standalone/deployments/```
-
 * Configure the distributed ```tasks``` cache in ```jboss-datagrid-7.1.0-server/standalone/configuration/clustered.xml```. Look for the stanza:
 
 ```
@@ -78,5 +74,9 @@ jboss-datagrid-7.1.0-server/bin/standalone.sh -c clustered.xml -b 127.0.0.1 -bma
 ```
 jboss-eap-7.0/bin/standalone.sh -b 127.0.0.1 -bmanagement=127.0.0.1
 ```
+
+* Change into the ```jdg7_demo``` and build the application with ```mvn clean package```
+
+* Deploy the application using ```mvn wildfly:deploy```
 
 * Run the demo in a browser at ```http://localhost:8080/jdgdemo```

@@ -61,7 +61,7 @@ public class SearchEndpoint
 	                 .build();
 	      List<Task> results = query.list();	   
 	    long stopTime = System.currentTimeMillis();	    
-	    log.info("#### Executeing last query took " + (stopTime-startTime) + " ms"); 
+	    log.info("#### Executing last query took " + (stopTime-startTime) + " ms"); 
 	  return results; 
    }
 
