@@ -4,9 +4,7 @@ import org.infinispan.protostream.MessageMarshaller;
 import org.jboss.infinispan.demo.model.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
 	public class TaskMarshaller implements MessageMarshaller<Task> {

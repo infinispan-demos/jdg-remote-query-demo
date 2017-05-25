@@ -1,11 +1,11 @@
 /* @Indexed */
 message Task {
 
-   /* @IndexedField */
+   /* @Field() */
    required string title = 1;
 
-   /* @IndexedField(index=false, store=false) */
-   required int32 id = 2;
+   /* @Field(index=Index.NO, store=Store.NO) */
+   required int64 id = 2;
 
    }
 
