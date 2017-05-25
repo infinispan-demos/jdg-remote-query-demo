@@ -3,7 +3,7 @@
 This is a demo showing the remote query capability in JBoss Data Grid. To tun this demo, you will need to download
 [JBoss Data Grid](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=data.grid&downloadType=distributions) and [JBoss EAP](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&downloadType=distributions). This demo has been tested with JBoss Data Grid 7.1 and JBoss EAP 7.0.
 
-##Screenshot
+## Screenshot
 
 ![Alt text](/docs/screenshot.png?raw=true "Demo Screenshot")
 
