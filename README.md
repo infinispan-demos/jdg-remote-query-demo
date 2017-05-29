@@ -43,42 +43,21 @@ At the end of the list of caches, add a new cache as follows:
 </distributed-cache>
 ```
 
-* Create three instances by copying the standalone directory as follows:
+* Start JDG in domain mode which will start two servers automatically:
 
 ```
-cp -r jboss-datagrid-7.1.0-server/standalone jboss-datagrid-7.1.0-server/standalone1
-cp -r jboss-datagrid-7.1.0-server/standalone jboss-datagrid-7.1.0-server/standalone2
-cp -r jboss-datagrid-7.1.0-server/standalone jboss-datagrid-7.1.0-server/standalone3
-```
-
-* Create the bash script ```startInstance.sh``` in ```demo```:
+bin/domain.sh
 
 ```
-if [ $1 -eq 0 ]
-  then
-    echo "Please provide an instance number (1..3)"
-    exit 1
-fi
-jboss-datagrid-7.1.0-server/bin/standalone.sh -c clustered.xml -b 127.0.0.1 -bmanagement=127.0.0.1 -Djboss.server.base.dir=jboss-datagrid-7.1.0-server/standalone${1} -Djboss.node.name=jdg${1} -Djboss.socket.binding.port-offset=${1}
-```
 
-* Start the three cache instances as follows:
+* Go into the management console at ```http://localhost:9990``` and make sure that the tasks cache is shown
 
+* Start EAP as per below, note we start EAP with a port offset of a 1000 so ports don't conflict with JDG:
 
 ```
-./startInstance.sh 1
-./startInstance.sh 2
-./startInstance.sh 3
-```
-
-* Go into the management console at ```http://localhost:9991``` and make sure that the tasks cache is shown
-
-* Start EAP as follows:
-
-```
-jboss-eap-7.0/bin/standalone.sh -b 127.0.0.1 -bmanagement=127.0.0.1
+jboss-eap-7.0/bin/standalone.sh -b 127.0.0.1 -bmanagement=127.0.0.1 -Djboss.socket.binding.port-offset=1000
 ```
 
 * Change into the ```jdg7_demo``` and build and deploy the application with ```mvn clean package wildfly:deploy```
 
-* Run the demo in a browser at ```http://localhost:8080/jdgdemo```
+* Run the demo in a browser at ```http://localhost:9080/jdgdemo```

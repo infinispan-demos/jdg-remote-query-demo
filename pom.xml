@@ -128,9 +128,9 @@
                 <version>1.1.0.Final</version>
                 <configuration>
                     <hostname>localhost</hostname>
-                    <port>9990</port>
+                    <port>10990</port>
                     <username>admin</username>
-                    <password>password</password>
+                    <password>admin</password>
                     <jboss-home>../jboss-eap-7.0</jboss-home>
                     <name>${project.build.finalName}.${project.packaging}</name>
                 </configuration>
@@ -157,19 +157,7 @@
                     </execution>
                 </executions>
             </plugin>
-			<!--
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.5.Final</version>
-				<configuration>
-					<hostname>localhost</hostname>
-					<port>9990</port>
-					<username>admin</username>
-					<password>admin</password>
-				</configuration>
-			</plugin>
-			-->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
