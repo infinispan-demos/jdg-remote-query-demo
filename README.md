@@ -21,7 +21,7 @@ This is a demo showing the remote query capability in JBoss Data Grid. To tun th
 
 * Clone this repository in the demo directory so you have the folder ```demo/jdg7_demo```
 
-* Configure the distributed ```tasks``` cache in ```jboss-datagrid-7.1.0-server/standalone/configuration/clustered.xml```. Look for the stanza:
+* Configure the distributed ```tasks``` cache in ```jboss-datagrid-7.1.0-server/domain/configuration/domain.xml```. Look for the stanza:
 
 ```
 <subsystem xmlns="urn:infinispan:server:core:8.4" default-cache-container="clustered">
